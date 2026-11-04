@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Labsheet6Q7 {
+    public static void checkAge(int age) throws IllegalArgumentException {
+        if (age < 18) {
+            throw new IllegalArgumentException("Age must be at least 18.");
+        }
+        System.out.println("Age is valid: " + age);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter age: ");
+        int age = scanner.nextInt();
+
+        try {
+            checkAge(age);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught Exception: " + e.getMessage());
+        }
+        scanner.close();
+    }
+}
